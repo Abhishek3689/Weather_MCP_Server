@@ -50,6 +50,8 @@ But you can still start the server manually to ensure it’s working:
 python weather_server_mcp.py
 ```
 You would see somthing like this it means server is running correclty
+
+
               ╭──────────────────────────────────────────────────────────────────────────────╮
               │                                                                              │
               │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
@@ -66,6 +68,8 @@ You would see somthing like this it means server is running correclty
               │                    🚀 Hosting:     https://fastmcp.cloud                     │
               │                                                                              │
               ╰──────────────────────────────────────────────────────────────────────────────╯
+
+              
 ## Integration with Claude Desktop
 
 To use this server with Claude Desktop, add the following to your Claude Desktop configuration:
