@@ -18,7 +18,7 @@ A Model Context Protocol (MCP) server that provides weather information tools. T
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/weather-mcp-server.git
+   git clone https://github.com/Abhishek3689/Weather_MCP_Server.git
    cd weather-mcp-server
    ```
 
@@ -98,7 +98,7 @@ To use this server with Claude Desktop, add the following to your Claude Desktop
     "weather": {
       "command": "python",
       "args": [
-        "D:/Data_Science_Learnings/MCP_Server/Simple_MCP/weather_server_mcp.py"
+        "weather_server_mcp.py"
       ],
       "env": {
         "WEATHER_API_KEY": "your_api_key_here"
@@ -183,9 +183,8 @@ If you encounter any issues or have questions:
 
 ## Author
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
 
-Project Link: [https://github.com/YOUR_USERNAME/weather-mcp-server](https://github.com/YOUR_USERNAME/weather-mcp-server)
+Project Link: [https://github.com/Abhishek3689/Weather_MCP_Server](https://github.com/Abhishek3689/Weather_MCP_Server.git)
 
 ## Acknowledgments
 
