@@ -38,12 +38,68 @@ A Model Context Protocol (MCP) server that provides weather information tools. T
 
 ## Usage
 
-### Running the Server
+🚀 Running The Server (Important!)
+👉 If you double-click or run the file, you will NOT see results.
 
-```bash
+MCP servers do not show output directly.
+
+They wait for Claude to connect to them.
+
+But you can still start the server manually to ensure it’s working:
+```
 python weather_server_mcp.py
 ```
+You would see somthing like this it means server is running correclty
+              ╭──────────────────────────────────────────────────────────────────────────────╮
+              │                                                                              │
+              │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+              │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+              │                                                                              │
+              │                                FastMCP 2.13.1                                │
+              │                                                                              │
+              │                                                                              │
+              │                    🖥  Server name: Weather Server                            │
+              │                                                                              │
+              │                    📦 Transport:   STDIO                                     │
+              │                                                                              │
+              │                    📚 Docs:        https://gofastmcp.com                     │
+              │                    🚀 Hosting:     https://fastmcp.cloud                     │
+              │                                                                              │
+              ╰──────────────────────────────────────────────────────────────────────────────╯
+## Integration with Claude Desktop
 
+To use this server with Claude Desktop, add the following to your Claude Desktop configuration:
+
+**On macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+**On Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "python",
+      "args": [
+        "weather_server_mcp.py"
+      ],
+      "env": {
+        "WEATHER_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
+```
+**Note :**
+for 'command' write absolute location instead of only "python" by checking using in command prompt
+```
+where python
+```
+you will see somthing like this
+
+```
+C:\Users\YourName\AppData\Local\Programs\Python\Python312\python.exe
+```
+After updating the config, restart Claude Desktop.
 ### Available Tools
 
 #### 1. Get Current Weather
@@ -84,38 +140,13 @@ compare_weather(city1: str, city2: str, units: str = "metric")
 compare_weather("Tokyo", "New York", "metric")
 ```
 
-## Integration with Claude Desktop
 
-To use this server with Claude Desktop, add the following to your Claude Desktop configuration:
-
-**On macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-**On Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "weather": {
-      "command": "python",
-      "args": [
-        "weather_server_mcp.py"
-      ],
-      "env": {
-        "WEATHER_API_KEY": "your_api_key_here"
-      }
-    }
-  }
-}
-```
-
-After updating the config, restart Claude Desktop.
 
 ## Project Structure
 
 ```
 weather-mcp-server/
 ├── weather_server_mcp.py   # Main MCP server implementation
-├── utilities.py            # Additional utility functions
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Environment variables (not committed)
 ├── .gitignore             # Git ignore file
